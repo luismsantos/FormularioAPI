@@ -1,0 +1,6 @@
+﻿services:
+  formularioapi:
+    image: formularioapi
+    build:
+      context: .
+      dockerfile: FormularioAPI/Dockerfile
