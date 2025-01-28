@@ -14,16 +14,15 @@ public class Pergunta
     public ICollection<Resposta> Respostas { get; set; }
 
 
-
     public void SetDescricao(string descricao)
     {
      if (string.IsNullOrEmpty(descricao))
             throw new ArgumentException("Descrição inválida");
 
-     if (descricao.Length > 300 || descricao.Length < 50)
+     if (descricao.Length > 300 || descricao.Length < 10)
             throw new ArgumentException("Descrição deve ter no máximo 300 caracteres");
 
-        Descricao = descricao;
+     Descricao = descricao;
     }
 
     public Pergunta(string descricao)
