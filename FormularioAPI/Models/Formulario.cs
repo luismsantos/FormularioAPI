@@ -5,7 +5,7 @@ namespace FormularioAPI.Models
     public class Formulario
     {
         [Key]
-        public int Id { get; set; }
+        public int Id { get; private set; }
         public String Nome { get; private set; }
         public String Descricao { get; private set; }
         public List<Pergunta>? Perguntas { get; set; }
