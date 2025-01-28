@@ -43,7 +43,6 @@ public class PerguntaController(AppDbContext context) : ControllerBase
     [HttpPut("{id:int}")]
     public ActionResult Put(int id, [FromBody] PerguntaAlterarDTO perguntaAlterarDTO)
     {
-
         var pergunta = context.Perguntas.FirstOrDefault(p => p.PerguntaId == id);
 
         pergunta.SetDescricao(perguntaAlterarDTO.Descricao);
