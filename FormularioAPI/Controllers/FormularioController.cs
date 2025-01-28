@@ -28,14 +28,7 @@ namespace FormularioAPI.Controllers
         [HttpPost]
         public ActionResult<Pergunta> Post([FromBody] FormularioInserirDTO formularioInserirDTO)
         {
-            var formulario = new Formulario()
-            {
-                Nome = formularioInserirDTO?.Nome,
-                Descricao = formularioInserirDTO?.Descricao
-            };
-
-            if (string.IsNullOrEmpty(formulario.Nome) || string.IsNullOrEmpty(formulario.Descricao))
-                return BadRequest("Valor invalido");
+            var formulario = new Formulario(formularioInserirDTO.Nome, formularioInserirDTO.Descricao);
 
             context.Formularios.Add(formulario);
             context.SaveChanges();
